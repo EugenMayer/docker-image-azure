@@ -28,3 +28,16 @@ Java:
 See Makefile to see what the base image is and what the target tag is. 
 
    ./build.sh <OS> <FROMIMAGE> <TAG>
+
+
+## Build
+
+```bash
+# all
+make debian
+
+# or
+make debian-node
+make debian-java
+make debian-php
+```
