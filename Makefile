@@ -4,7 +4,7 @@ debian: debian-node debian-java debian-php
 debian-node:
 	./build.sh debian node:8 node-8
 	./build.sh debian node:12 node-10
-	./build.sh debian node:12 node-12
+	./build.sh debian node:12 node-12-buster
 
 debian-java:
 	./build.sh debian adoptopenjdk/openjdk8:debian adoptopenjdk-openjdk8
