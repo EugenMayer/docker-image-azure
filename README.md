@@ -3,9 +3,8 @@
 Building images for azure pipeliens adding the most common tools and most importantly the mandatory `sudo` package.
 All the base images are, if possible, official images e.g. `node:12` and so on
 
-The images are designed to be used in your CI, we use azure-pipelines in this regard.
-
-The images are arebuild every 2 days automatically to ensure the most up-to-date patches are applied. 
+- The images are minimal, untempered and designed to be used in your CI, we use azure-pipelines in this regard.
+- The images are build every 2 days automatically to ensure the most up-to-date patches are applied. 
 
 ### Debian images
 
