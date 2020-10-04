@@ -20,7 +20,7 @@ PHP
 - eugenmayer/azure:debian-php-7.4-buster (based on `php:7.4-buster`)
 
 Java:
-- eugenmayer/azure:debian-adoptopenjdk-openjdk8-debian (based on `adoptopenjdk/openjdk8:debian`)
+- eugenmayer/azure:debian-adoptopenjdk-openjdk8 (based on `adoptopenjdk/openjdk8:debian`)
 - eugenmayer/azure:debian-adoptopenjdk-openjdk11 (based on `adoptopenjdk/openjdk11:debian`)
 - eugenmayer/azure:debian-adoptopenjdk-openjdk11-openj9 (based on `adoptopenjdk/openjdk11-openj9:debian`)
 
