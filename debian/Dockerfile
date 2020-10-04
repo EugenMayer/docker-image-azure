@@ -2,7 +2,17 @@ ARG FROM
 FROM $FROM
 
 # Install sudo, jq, make, m4, wget
-RUN apt-get update && apt-get install -y sudo make m4 curl wget jq \
+RUN apt-get update && apt-get install -y \
+    # support for azure pipilines
+    sudo \
+    # support for generic makefile
+    make m4 \
+    # support for binary download support for toolbelt extensions
+    curl wget \
+    # support for usual configuration / output parsing during builds
+    jq \
+    # support for runing unter specific users
+    gosu \
   && rm -rf /tmp/* /var/tmp/* \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
