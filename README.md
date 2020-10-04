@@ -11,18 +11,18 @@ All the base images are, if possible, official images e.g. `node:12` and so on
 Find them all under [https://hub.docker.com/r/eugenmayer/azure/tags](https://hub.docker.com/r/eugenmayer/azure/tags)
 
 NODE
-- eugenmayer/azure:debian-node-8 (based on `node:8`)
-- eugenmayer/azure:debian-node-10 (based on `node:10`)
-- eugenmayer/azure:debian-node-12 (based on `node:12`)
+- `eugenmayer/azure:debian-node-8` (based on `node:8`)
+- `eugenmayer/azure:debian-node-10` (based on `node:10`)
+- `eugenmayer/azure:debian-node-12` (based on `node:12`)
 
 PHP
-- eugenmayer/azure:debian-php-7.3-buster (based on `php:7.3-buster`)
-- eugenmayer/azure:debian-php-7.4-buster (based on `php:7.4-buster`)
+- `eugenmayer/azure:debian-php-7.3-buster` (based on `php:7.3-buster`)
+- `eugenmayer/azure:debian-php-7.4-buster` (based on `php:7.4-buster`)
 
 Java:
-- eugenmayer/azure:debian-adoptopenjdk-openjdk8 (based on `adoptopenjdk/openjdk8:debian`)
-- eugenmayer/azure:debian-adoptopenjdk-openjdk11 (based on `adoptopenjdk/openjdk11:debian`)
-- eugenmayer/azure:debian-adoptopenjdk-openjdk11-openj9 (based on `adoptopenjdk/openjdk11-openj9:debian`)
+- `eugenmayer/azure:debian-adoptopenjdk-openjdk8` (based on `adoptopenjdk/openjdk8:debian`)
+- `eugenmayer/azure:debian-adoptopenjdk-openjdk11` (based on `adoptopenjdk/openjdk11:debian`)
+- `eugenmayer/azure:debian-adoptopenjdk-openjdk11-openj9` (based on `adoptopenjdk/openjdk11-openj9:debian`)
 
 ### Details
 
