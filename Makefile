@@ -3,7 +3,7 @@ debian: debian-node debian-java debian-php
 
 debian-node:
 	./build-image.sh debian node:8 node-8
-	./build-image.sh debian node:12 node-10
+	./build-image.sh debian node:10 node-10
 	./build-image.sh debian node:12 node-12-buster
 
 debian-java:
