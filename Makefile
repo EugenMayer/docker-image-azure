@@ -15,8 +15,8 @@ debian-java:
 	./build-image.sh debian adoptopenjdk/openjdk11-openj9:debian adoptopenjdk-openjdk11-openj9
 
 debian-php:
-	./build-image.sh debian php:7.3-buster php-7.3-buster debian/php
-	./build-image.sh debian php:7.4-buster php-7.4-buster debian/php
+	./build-php-image.sh 7.3 debian/php
+	./build-php-image.sh 7.4 debian/php
 
 push:
 	docker push eugenmayer/azure
