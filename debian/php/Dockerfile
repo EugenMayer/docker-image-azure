@@ -1,7 +1,7 @@
 ARG PHP_VERSION
 FROM debian:buster
 RUN apt-get update \
-  && apt-get install -y gnupg curl apt-transport-https lsb-release \
+  && apt-get install -y gnupg curl apt-transport-https lsb-release git \
   && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" >> /etc/apt/sources.list.d/packages.sury.org.list \
   && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main/debug >> /etc/apt/sources.list.d/packages.sury.org-debug.list" \
   && echo "new GPG key due to https://www.patreon.com/posts/dpa-new-signing-25451165" \
