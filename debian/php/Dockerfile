@@ -14,6 +14,10 @@ RUN apt-get update && apt-get install -y \
     # support for runing unter specific users
     gosu \
     git \
+    # required for composer update
+    zip \
+    unzip \
+    php-zip \
   && curl https://getcomposer.org/installer -o /tmp/composerinstaller \
   && php /tmp/composerinstaller --install-dir=/usr/local/bin --filename=composer \
   && rm /tmp/composerinstaller \
