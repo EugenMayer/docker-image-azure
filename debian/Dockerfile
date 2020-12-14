@@ -11,8 +11,9 @@ RUN apt-get update && apt-get install -y \
     curl wget \
     # support for usual configuration / output parsing during builds
     jq \
-    # support for runing unter specific users
+    # support for runing under specific users
     gosu \
+    git \
   && rm -rf /tmp/* /var/tmp/* \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \

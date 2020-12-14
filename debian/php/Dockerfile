@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     jq \
     # support for runing unter specific users
     gosu \
+    git \
   && curl https://getcomposer.org/installer -o /tmp/composerinstaller \
   && php /tmp/composerinstaller --install-dir=/usr/local/bin --filename=composer \
   && rm /tmp/composerinstaller \
