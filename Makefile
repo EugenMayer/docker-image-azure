@@ -19,4 +19,4 @@ debian-php:
 	./build-php-image.sh 7.4 debian/php
 
 push:
-	docker push eugenmayer/azure
+	docker push eugenmayer/azure --all-tags
