@@ -1,4 +1,4 @@
-debian: debian-node debian-java debian-java-jre debian-php debian-golang
+debian: debian-node debian-java debian-java-jre debian-php debian-golang alpine-java alpine-jre
 	echo "done building debian image"
 
 debian-node:
