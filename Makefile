@@ -12,9 +12,13 @@ debian-golang:
 	./build-image.sh debian golang:1.17-buster golang-1.17-buster
 
 debian-java:
-	./build-image.sh debian adoptopenjdk/openjdk8:debian adoptopenjdk-openjdk8
-	./build-image.sh debian adoptopenjdk/openjdk11:debian adoptopenjdk-openjdk11
-	./build-image.sh debian adoptopenjdk/openjdk11-openj9:debian adoptopenjdk-openjdk11-openj9
+	./build-image.sh debian bellsoft/liberica-openjdk-debian:8 openjdk8
+	./build-image.sh debian bellsoft/liberica-openjdk-debian:11 openjdk11
+	./build-image.sh debian bellsoft/liberica-openjdk-debian:17 openjdk17
+	
+alpine-java:
+	./build-image.sh alpine bellsoft/liberica-openjdk-alpine:11 openjdk11
+	./build-image.sh alpine bellsoft/liberica-openjdk-alpine:17 openjdk17
 
 debian-php:
 	./build-php-image.sh 7.3 debian/php
