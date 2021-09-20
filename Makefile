@@ -1,4 +1,4 @@
-debian: debian-node debian-java debian-php debian-golang
+debian: debian-node debian-java debian-java-jre debian-php debian-golang
 	echo "done building debian image"
 
 debian-node:
@@ -15,10 +15,19 @@ debian-java:
 	./build-image.sh debian bellsoft/liberica-openjdk-debian:8 openjdk8
 	./build-image.sh debian bellsoft/liberica-openjdk-debian:11 openjdk11
 	./build-image.sh debian bellsoft/liberica-openjdk-debian:17 openjdk17
+
+debian-java-jre:
+	./build-image.sh debian bellsoft/liberica-openjre-debian:8 openjre8
+	./build-image.sh debian bellsoft/liberica-openjre-debian:11 openjre11
+	./build-image.sh debian bellsoft/liberica-openjre-debian:17 openjre17
 	
 alpine-java:
 	./build-image.sh alpine bellsoft/liberica-openjdk-alpine:11 openjdk11
 	./build-image.sh alpine bellsoft/liberica-openjdk-alpine:17 openjdk17
+	
+alpine-java-jre:
+	./build-image.sh alpine bellsoft/liberica-openjdk-alpine:11 openjre11
+	./build-image.sh alpine bellsoft/liberica-openjdk-alpine:17 openjre17	
 
 debian-php:
 	./build-php-image.sh 7.3 debian/php
