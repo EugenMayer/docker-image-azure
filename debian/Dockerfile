@@ -2,7 +2,8 @@ ARG FROM
 FROM $FROM
 
 # Install sudo, jq, make, m4, wget
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y \
+    && apt-get install -y \
     # support for azure pipilines
     sudo \
     # support for generic makefile
