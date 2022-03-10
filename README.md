@@ -27,9 +27,19 @@ Golan
 - `eugenmayer/azure:debian-golang-1.18-buster` (based on `golang:1.18-buster`)
 
 Java:
-- `eugenmayer/azure:debian-adoptopenjdk-openjdk8` (based on `adoptopenjdk/openjdk8:debian`)
-- `eugenmayer/azure:debian-adoptopenjdk-openjdk11` (based on `adoptopenjdk/openjdk11:debian`)
-- `eugenmayer/azure:debian-adoptopenjdk-openjdk11-openj9` (based on `adoptopenjdk/openjdk11-openj9:debian`)
+- `eugenmayer/azure:debian-openjdk8` (based on `bellsoft/liberica-openjdk-debian:8`)
+- `eugenmayer/azure:debian-openjdk11` (based on `bellsoft/liberica-openjdk-debian:11`)
+- `eugenmayer/azure:debian-openjdk17` (based on `bellsoft/liberica-openjdk-debian:17`)
+
+
+# Production images
+
+Those images are usually smaller, e.g. using a JRE
+
+Java:
+- `eugenmayer/azure:debian-prod-openjre8` (based on `bellsoft/liberica-openjre-debian:8`)
+- `eugenmayer/azure:debian-prod-openjre11` (based on `bellsoft/liberica-openjre-debian:11`)
+- `eugenmayer/azure:debian-prod-openjre17` (based on `bellsoft/liberica-openjre-debian:17`)
 
 ### Details
 
