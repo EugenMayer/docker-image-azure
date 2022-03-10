@@ -15,6 +15,7 @@ NODE
 - `eugenmayer/azure:debian-node-10` (based on `node:10`)
 - `eugenmayer/azure:debian-node-12` (based on `node:12`)
 - `eugenmayer/azure:debian-node-14` (based on `node:14`)
+- `eugenmayer/azure:debian-node-16` (based on `node:16`)
 
 PHP
 - `eugenmayer/azure:debian-php-7.3-buster` (based on `php:7.3-buster`)
