@@ -12,6 +12,8 @@ debian-golang:
 	./build-image.sh debian golang:1.15-buster golang-1.15-buster
 	./build-image.sh debian golang:1.17-buster golang-1.17-buster
 	./build-image.sh debian golang:1.18rc1-buster golang-1.18-buster
+	./build-image.sh debian golang:1.19-buster golang-1.19-buster
+	./build-image.sh debian golang:1.19-bullseye golang-1.19-bullseye
 
 debian-java:
 	./build-image.sh debian bellsoft/liberica-openjdk-debian:8 openjdk8
