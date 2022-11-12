@@ -7,6 +7,7 @@ debian-node:
 	./build-image.sh debian node:12 node-12-buster
 	./build-image.sh debian node:14 node-14-buster
 	./build-image.sh debian node:16 node-16-buster
+	./build-image.sh debian node:18 node-18-buster
 	
 debian-golang:
 	./build-image.sh debian golang:1.15-buster golang-1.15-buster
@@ -29,6 +30,7 @@ debian-php:
 	./build-php-image.sh 7.3 debian/php
 	./build-php-image.sh 7.4 debian/php
 	./build-php-image.sh 8.1 debian/php
+	./build-php-image.sh 8.2 debian/php
 
 push:
 	docker push eugenmayer/azure --all-tags
