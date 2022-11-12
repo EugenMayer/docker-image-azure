@@ -27,10 +27,11 @@ debian-java-prod:
 	./build-image.sh debian-prod bellsoft/liberica-openjre-debian:17 openjre17
 	
 debian-php:
-	./build-php-image.sh 7.3 debian/php
-	./build-php-image.sh 7.4 debian/php
-	./build-php-image.sh 8.1 debian/php
-	./build-php-image.sh 8.2 debian/php
+	./build-php-image.sh 7.3 buster debian/php
+	./build-php-image.sh 7.4 buster debian/php
+	./build-php-image.sh 7.4 bullseye debian/php
+	./build-php-image.sh 8.1 bullseye debian/php
+	./build-php-image.sh 8.2 bullseye debian/php
 
 push:
 	docker push eugenmayer/azure --all-tags
