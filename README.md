@@ -16,16 +16,20 @@ NODE
 - `eugenmayer/azure:debian-node-12` (based on `node:12`)
 - `eugenmayer/azure:debian-node-14` (based on `node:14`)
 - `eugenmayer/azure:debian-node-16` (based on `node:16`)
+- `eugenmayer/azure:debian-node-18` (based on `node:18`)
 
 PHP
 - `eugenmayer/azure:debian-php-7.3-buster` (based on `php:7.3-buster`)
 - `eugenmayer/azure:debian-php-7.4-buster` (based on `php:7.4-buster`)
-- `eugenmayer/azure:debian-php-8.1-buster` (based on `php:8.1-buster`)
+- `eugenmayer/azure:debian-php-7.4-buster` (based on `php:7.4-bullseye`)
+- `eugenmayer/azure:debian-php-8.1-buster` (based on `php:8.1-bullseye`)
+- `eugenmayer/azure:debian-php-8.1-buster` (based on `php:8.2-bullseye`)
 
 Golan
 - `eugenmayer/azure:debian-golang-1.15-buster` (based on `golang:1.15-buster`)
 - `eugenmayer/azure:debian-golang-1.17-buster` (based on `golang:1.17-buster`)
 - `eugenmayer/azure:debian-golang-1.18-buster` (based on `golang:1.18-buster`)
+- `eugenmayer/azure:debian-golang-1.18-buster` (based on `golang:1.19-buster`)
 
 Java:
 - `eugenmayer/azure:debian-openjdk8` (based on `bellsoft/liberica-openjdk-debian:8`)
