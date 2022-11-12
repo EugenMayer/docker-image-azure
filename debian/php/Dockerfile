@@ -1,5 +1,8 @@
+ARG FROM_IMAGE=debian:buster
+FROM FROM_IMAGE
+
 ARG PHP_VERSION
-FROM debian:buster
+
 RUN apt-get update \
   && apt-get install -y gnupg apt-transport-https lsb-release \
   # support for azure pipilines
