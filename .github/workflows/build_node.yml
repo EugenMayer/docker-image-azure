@@ -1,4 +1,4 @@
-name: build_java
+name: build_golang
 
 on: push
 
@@ -10,8 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: ['8', '11', '17']
-        variant: ["openjdk"]
+        node: ['8', '10', '12', '14', '16', '18']
+        debian: ['buster', "bullseye"]
+        exclude:
+          - node: 8
+            debian: bullseye
+          - node: 10
+            debian: bullseye
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -33,6 +39,6 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ env.IMAGE_FQDN }}:java-${{ matrix.variant}}-${{ matrix.java }}
+            ${{ env.IMAGE_FQDN }}:node-${{ matrix.node }}-${{ matrix.debian }}
           build-args: |
-            FROM_IMAGE=bellsoft/liberica-${{ matrix.variant}}:${{ matrix.java }}
+            FROM_IMAGE=node:${{ matrix.node }}-${{ matrix.debian }}
