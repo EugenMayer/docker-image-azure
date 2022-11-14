@@ -1,5 +1,5 @@
-ARG FROM 
-FROM $FROM
+ARG FROM_IMAGE
+FROM $FROM_IMAGE
 
 # Install sudo, jq, make, m4, wget
 RUN apt-get update && apt-get upgrade -y \

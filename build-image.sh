@@ -8,4 +8,4 @@ TAG=$3
 BUILDDIR=${4:-$OS}
 
 cd $BUILDDIR
-docker build -t eugenmayer/azure:$OS-$TAG --build-arg FROM=$BASEIMAGE .
+docker build -t eugenmayer/azure:$OS-$TAG --build-arg FROM_IMAGE=$BASEIMAGE .
