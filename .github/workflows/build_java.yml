@@ -1,4 +1,4 @@
-name: build_php
+name: build_java
 
 on: push
 
@@ -10,11 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: ['7.3','7.4',"8.1"]
-        debian: ['buster', "bullseye"]
-        exclude:
-          - php: 7.3
-            debian: bullseye
+        java: ['8', '11', '17']
+        variant: ["openjdk"]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -32,11 +29,10 @@ jobs:
       - name: Build
         uses: docker/build-push-action@v3
         with:
-          context: debian/php
+          context: debian/
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ env.IMAGE_FQDN }}:php-${{ matrix.php }}-${{ matrix.debian }}
+            ${{ env.IMAGE_FQDN }}:java-${{ matrix.variant}}-${{ matrix.java }}
           build-args: |
-            PHP_VERSION=${{ matrix.php }}
-            FROM_IMAGE=debian:${{ matrix.debian }} 
+            FROM_IMAGE=bellsoft/liberica-${{ matrix.variant}}:${{ matrix.java }}:
