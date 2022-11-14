@@ -1,5 +1,6 @@
 ARG FROM_IMAGE
 FROM $FROM_IMAGE
+LABEL org.opencontainers.image.source = "https://github.com/EugenMayer/docker-image-azure"
 
 # Install sudo, jq, make, m4, wget
 RUN apt-get update && apt-get upgrade -y \

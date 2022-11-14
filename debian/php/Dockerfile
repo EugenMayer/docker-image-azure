@@ -1,6 +1,8 @@
 ARG FROM_IMAGE
 FROM $FROM_IMAGE
 
+LABEL org.opencontainers.image.source = "https://github.com/EugenMayer/docker-image-azure"
+
 ARG PHP_VERSION
 
 RUN apt-get update \
