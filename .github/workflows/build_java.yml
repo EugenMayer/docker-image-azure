@@ -1,6 +1,9 @@
 name: build_java
 
-on: push
+on:
+  push:
+  schedule:
+    - cron:  '30 23 * * *'
 
 env:
   IMAGE_FQDN: ghcr.io/eugenmayer/azure
