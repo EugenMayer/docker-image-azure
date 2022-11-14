@@ -1,4 +1,4 @@
-name: build_java
+name: build_golang
 
 on: push
 
