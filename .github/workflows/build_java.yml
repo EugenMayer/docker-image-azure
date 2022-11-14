@@ -35,4 +35,4 @@ jobs:
           tags: |
             ${{ env.IMAGE_FQDN }}:java-${{ matrix.variant}}-${{ matrix.java }}
           build-args: |
-            FROM_IMAGE=bellsoft/liberica-${{ matrix.variant}}:${{ matrix.java }}
+            FROM_IMAGE=bellsoft/liberica-${{ matrix.variant}}-debian:${{ matrix.java }}
