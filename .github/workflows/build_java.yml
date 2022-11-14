@@ -33,6 +33,6 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ env.IMAGE_FQDN }}:java-${{ matrix.variant}}-${{ matrix.java }}
+            ${{ env.IMAGE_FQDN }}:java-${{ matrix.variant}}-${{ matrix.java }}-bullseye
           build-args: |
             FROM_IMAGE=bellsoft/liberica-${{ matrix.variant}}-debian:${{ matrix.java }}
