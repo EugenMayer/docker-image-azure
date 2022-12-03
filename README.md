@@ -1,3 +1,5 @@
+[![build_java](https://github.com/EugenMayer/docker-image-azure/actions/workflows/build_java.yml/badge.svg)](https://github.com/EugenMayer/docker-image-azure/actions/workflows/build_java.yml)
+
 ## WAT
 
 Nightly builds of docker images for azure pipeliens adding the most common tools and most importantly the mandatory `sudo` package.
