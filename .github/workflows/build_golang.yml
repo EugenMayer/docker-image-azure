@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        golang: ['1.15', '1.17', '1.19']
+        golang: ['1.15', '1.17', '1.19', '1.20']
         debian: ['buster', "bullseye"]
         exclude:
           - golang: 1.15
