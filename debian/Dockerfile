@@ -16,6 +16,8 @@ RUN apt-get update && apt-get upgrade -y \
     # support for runing under specific users
     gosu \
     git \
+    # for all the ssh / scp tasks \
+    openssh-client rsync \
   && rm -rf /tmp/* /var/tmp/* \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
