@@ -3,7 +3,7 @@ FROM $FROM_IMAGE
 
 LABEL org.opencontainers.image.source = "https://github.com/EugenMayer/docker-image-azure"
 
-ARG GRAALVM_VERSION=17
+ARG GRAALVM_VERSION=17.0.7
 RUN apt-get update \
   && apt-get install -y gnupg apt-transport-https lsb-release \
   # needed for installing graslvm
@@ -21,7 +21,10 @@ RUN apt-get update \
   # general tools
   git openssh-client rsync \
   && mkdir -p /opt \
-  && curl -L https://download.oracle.com/graalvm/${GRAALVM_VERSION}/latest/graalvm-jdk-${GRAALVM_VERSION}_linux-x64_bin.tar.gz -o /opt/graalvm.tgz \
+  # community edition
+  && curl -L https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-${GRAALVM_VERSION}/graalvm-community-jdk-${GRAALVM_VERSION}_linux-x64_bin.tar.gz -o /opt/graalvm.tgz \
+  # oracle edition
+  # && curl -L https://download.oracle.com/graalvm/${GRAALVM_VERSION}/latest/graalvm-jdk-${GRAALVM_VERSION}_linux-x64_bin.tar.gz -o /opt/graalvm.tgz \
   && cd /opt \
   && tar -xzf graalvm.tgz && rm graalvm.tgz \
   && mv graalvm-jdk* graalvm \

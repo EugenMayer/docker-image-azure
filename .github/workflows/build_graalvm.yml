@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        graalvm: ['17']
+        graalvm: ['17.0.7']
         debian: ['buster', "bullseye", "bookworm"]
     steps:
       - name: Checkout
