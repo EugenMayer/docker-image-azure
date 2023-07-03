@@ -39,3 +39,4 @@ jobs:
             ${{ env.IMAGE_FQDN }}:graalvm-${{ matrix.graalvm }}-${{ matrix.debian }}
           build-args: |
             FROM_IMAGE=debian:${{ matrix.debian }}
+            GRAALVM_VERSION=${{ matrix.graalvm }}

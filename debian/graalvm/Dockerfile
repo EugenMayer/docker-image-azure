@@ -3,11 +3,11 @@ FROM $FROM_IMAGE
 
 LABEL org.opencontainers.image.source = "https://github.com/EugenMayer/docker-image-azure"
 
-ARG GRAALVM_VERSION
+ARG GRAALVM_VERSION=17
 RUN apt-get update \
   && apt-get install -y gnupg apt-transport-https lsb-release \
-  # needed for sdkman
-  ca-certificates curl unzip zip \
+  # needed for installing graslvm
+  ca-certificates curl unzip zip gzip tar \
   # support for azure pipelines
   sudo \
   # support for generic makefile
@@ -21,14 +21,10 @@ RUN apt-get update \
   # general tools
   git openssh-client rsync \
   && mkdir -p /opt \
-  && curl https://download.oracle.com/graalvm/${GRAALVM_VERSION}/latest/graalvm-jdk-${GRAALVM_VERSION}_linux-x64_bin.tar.gz -o /opt/graalvm.tgz \
+  && curl -L https://download.oracle.com/graalvm/${GRAALVM_VERSION}/latest/graalvm-jdk-${GRAALVM_VERSION}_linux-x64_bin.tar.gz -o /opt/graalvm.tgz \
   && cd /opt \
   && tar -xzf graalvm.tgz && rm graalvm.tgz \
   && mv graalvm-jdk* graalvm \
-  # install composer
-  && curl https://getcomposer.org/installer -o /tmp/composerinstaller \
-  && php /tmp/composerinstaller --install-dir=/usr/local/bin --filename=composer \
-  && rm /tmp/composerinstaller \
   && rm -rf /tmp/* /var/tmp/* \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
