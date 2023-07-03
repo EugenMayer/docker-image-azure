@@ -1,4 +1,4 @@
-name: build_golang
+name: build_graalvm
 
 on:
   push:
@@ -13,11 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        golang: ['1.19', '1.20']
-        debian: ["bullseye", "bookworm"]
-        exclude:
-          - golang: 1.15
-            debian: bullseye
+        graalvm: ['17']
+        debian: ['buster', "bullseye", "bookworm"]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -39,6 +36,6 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ env.IMAGE_FQDN }}:golang-${{ matrix.golang }}-${{ matrix.debian }}
+            ${{ env.IMAGE_FQDN }}:graalvm-${{ matrix.graalvm }}-${{ matrix.debian }}
           build-args: |
-            FROM_IMAGE=golang:${{ matrix.golang }}-${{ matrix.debian }}
+            FROM_IMAGE=-debian:${{ matrix.debian }}

@@ -3,10 +3,11 @@ FROM $FROM_IMAGE
 
 LABEL org.opencontainers.image.source = "https://github.com/EugenMayer/docker-image-azure"
 
-ARG PHP_VERSION
-
+ARG GRAALVM_VERSION
 RUN apt-get update \
   && apt-get install -y gnupg apt-transport-https lsb-release \
+  # needed for sdkman
+  ca-certificates curl unzip zip \
   # support for azure pipelines
   sudo \
   # support for generic makefile
@@ -19,13 +20,11 @@ RUN apt-get update \
   gosu \
   # general tools
   git openssh-client rsync \
-  && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" >> /etc/apt/sources.list.d/packages.sury.org.list \
-  && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main/debug" >> /etc/apt/sources.list.d/packages.sury.org-debug.list \
-  && echo "new GPG key due to https://www.patreon.com/posts/dpa-new-signing-25451165" \
-  && curl https://packages.sury.org/php/apt.gpg -o /tmp/sury.gpg \
-  && apt-key add /tmp/sury.gpg && rm /tmp/sury.gpg \
-  && apt update \
-  && apt-get install -y php${PHP_VERSION}-cli php${PHP_VERSION}-zip \
+  && mkdir -p /opt \
+  && curl https://download.oracle.com/graalvm/${GRAALVM_VERSION}/latest/graalvm-jdk-${GRAALVM_VERSION}_linux-x64_bin.tar.gz -o /opt/graalvm.tgz \
+  && cd /opt \
+  && tar -xzf graalvm.tgz && rm graalvm.tgz \
+  && mv graalvm-jdk* graalvm \
   # install composer
   && curl https://getcomposer.org/installer -o /tmp/composerinstaller \
   && php /tmp/composerinstaller --install-dir=/usr/local/bin --filename=composer \
@@ -36,3 +35,8 @@ RUN apt-get update \
   && rm -fr /tmp/*.deb \
   && rm -rf /usr/share/man/?? \
   && rm -rf /usr/share/man/??_* 
+
+ENV PATH=/opt/graalvm/bin:$PATH
+ENV JAVA_HOME=/opt/graalvm
+
+RUN java -version

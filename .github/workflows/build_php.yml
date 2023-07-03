@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: ['7.3','7.4',"8.1"]
-        debian: ['buster', "bullseye"]
+        php: ['7.4',"8.1"]
+        debian: ["bullseye", "bookworm"]
         exclude:
           - php: 7.3
             debian: bullseye
