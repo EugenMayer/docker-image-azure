@@ -21,13 +21,13 @@ RUN apt-get update \
   # general tools
   git openssh-client rsync \
   && mkdir -p /opt \
-  # community edition
-  && curl -L https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-${GRAALVM_VERSION}/graalvm-community-jdk-${GRAALVM_VERSION}_linux-x64_bin.tar.gz -o /opt/graalvm.tgz \
+  # community edition \
+  && curl -L "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-${GRAALVM_VERSION}/graalvm-community-jdk-${GRAALVM_VERSION}_linux-x64_bin.tar.gz" -o /opt/graalvm.tgz \
   # oracle edition
   # && curl -L https://download.oracle.com/graalvm/${GRAALVM_VERSION}/latest/graalvm-jdk-${GRAALVM_VERSION}_linux-x64_bin.tar.gz -o /opt/graalvm.tgz \
   && cd /opt \
   && tar -xzf graalvm.tgz && rm graalvm.tgz \
-  && mv graalvm-jdk* graalvm \
+  && mv graalvm* graalvm \
   && rm -rf /tmp/* /var/tmp/* \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
