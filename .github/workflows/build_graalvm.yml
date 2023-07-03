@@ -32,7 +32,7 @@ jobs:
       - name: Build
         uses: docker/build-push-action@v3
         with:
-          context: debian/
+          context: debian/graalvm
           platforms: linux/amd64
           push: true
           tags: |
