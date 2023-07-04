@@ -15,9 +15,6 @@ jobs:
       matrix:
         golang: ['1.19', '1.20']
         debian: ["bullseye", "bookworm"]
-        exclude:
-          - golang: 1.15
-            debian: bullseye
     steps:
       - name: Checkout
         uses: actions/checkout@v3
