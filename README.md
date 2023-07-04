@@ -14,8 +14,8 @@ Find them all under [github images](https://github.com/EugenMayer/docker-image-a
 
 There are 
  - node `8`-`18` builds
- - php `7.3`-`8.1` builds
- - java `8`-`17` builds
- - golang `1.15`-`1.19` builds
+ - php `7.3`, `8.1` builds
+ - java `8`, `11`,`17` builds
+ - golang `1.19`-`1.20` builds
 
-Usually builds are available for `buster` and `bullseye`, but see the tag list for all the details. 
+Usually builds are available for `buster`,  `bullseye` and `bookworm`, but see the tag list for all the details. 

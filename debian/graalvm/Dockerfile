@@ -39,4 +39,6 @@ ENV PATH=/opt/graalvm/bin:$PATH
 ENV JAVA_HOME=/opt/graalvm
 ENV GRAALVM_HOME=/opt/graalvm
 
-RUN java -version
+RUN java --version \
+    gcc --version \
+    ldd --version
