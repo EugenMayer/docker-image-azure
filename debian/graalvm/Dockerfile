@@ -7,7 +7,7 @@ ARG GRAALVM_VERSION=17.0.7
 RUN apt-get update \
   && apt-get install -y gnupg apt-transport-https lsb-release \
   # needed for installing graalvm
-  ca-certificates curl unzip zip gzip tar gcc make \
+  ca-certificates curl unzip zip gzip tar gcc make zlib1g-dev \
   # support for azure pipelines
   sudo \
   # support for generic makefile
