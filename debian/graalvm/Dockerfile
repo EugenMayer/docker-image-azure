@@ -6,8 +6,8 @@ LABEL org.opencontainers.image.source = "https://github.com/EugenMayer/docker-im
 ARG GRAALVM_VERSION=17.0.7
 RUN apt-get update \
   && apt-get install -y gnupg apt-transport-https lsb-release \
-  # needed for installing graslvm
-  ca-certificates curl unzip zip gzip tar \
+  # needed for installing graalvm
+  ca-certificates curl unzip zip gzip tar gcc make \
   # support for azure pipelines
   sudo \
   # support for generic makefile
