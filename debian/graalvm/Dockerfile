@@ -40,5 +40,5 @@ ENV JAVA_HOME=/opt/graalvm
 ENV GRAALVM_HOME=/opt/graalvm
 
 RUN java --version \
-    gcc --version \
-    ldd --version
+    && gcc --version \
+    && ldd --version
