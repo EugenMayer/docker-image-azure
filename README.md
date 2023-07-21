@@ -17,5 +17,6 @@ There are
  - php `7.3`, `8.1` builds
  - java `8`, `11`,`17` builds
  - golang `1.19`-`1.20` builds
+ - tauri with node [`18`] and rust [`1.71.0`] builds
 
 Usually builds are available for `buster`,  `bullseye` and `bookworm`, but see the tag list for all the details. 

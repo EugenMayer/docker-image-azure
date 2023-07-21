@@ -1,0 +1,44 @@
+name: build_ruby
+
+on:
+  push:
+  schedule:
+    - cron:  '30 23 * * *'
+
+env:
+  IMAGE_FQDN: ghcr.io/eugenmayer/azure
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        debian: ['bullseye', 'bookworm']
+        # see https://github.com/rust-lang/rust/blob/master/RELEASES.md
+        rust: ["1.71.0"]
+        node: ["18"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Login to GHCR
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ github.token }}
+      # push only on main
+      - name: Build
+        uses: docker/build-push-action@v3
+        with:
+          context: debian/
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ env.IMAGE_FQDN }}:tauri-${{ matrix.node }}-${{ matrix.rust }}-${{ matrix.debian }}
+          build-args: |
+            FROM_IMAGE=node:${{ matrix.node }}-${{ matrix.debian }}
+            RUST_VERSION=${{ matrix.rust }}
