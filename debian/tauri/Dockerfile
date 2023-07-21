@@ -15,14 +15,15 @@ RUN apt-get update \
   # rust compile dependencies
   build-essential cmake clang libsoup2.4-dev libjavascriptcoregtk-4.0-dev librust-pango-dev \
   librust-gdk-sys-dev libwebkit2gtk-4.0-dev libappindicator3-dev libatk1.0-dev \
-  # community edition \
-  && curl https://sh.rustup.rs/ | sh -s --default-toolchain=$RUST_VERSION \
   && rm -rf /tmp/* /var/tmp/* \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -fr /tmp/*.deb \
   && rm -rf /usr/share/man/?? \
-  && rm -rf /usr/share/man/??_* 
+  && rm -rf /usr/share/man/??_* \
+
+# see https://rust-lang.github.io/rustup/installation/other.html
+RUN curl https://sh.rustup.rs/ -sSf | sh -s --default-toolchain=$RUST_VERSION
 
 ENV PATH=/root/.cargo/.bin:$PATH
 
