@@ -1,4 +1,4 @@
-name: build_ruby
+name: build_tauri
 
 on:
   push:
