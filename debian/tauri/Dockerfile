@@ -16,7 +16,7 @@ RUN apt-get update \
   build-essential cmake clang libsoup2.4-dev libjavascriptcoregtk-4.0-dev librust-pango-dev \
   librust-gdk-sys-dev libwebkit2gtk-4.0-dev libappindicator3-dev libatk1.0-dev \
   # community edition \
-  && curl --proto '=https' --tls1.2 -sSf https://sh.rustup.rs/ | sh -s --default-toolchain=$RUST_VERSION \
+  && curl https://sh.rustup.rs/ | sh -s --default-toolchain=$RUST_VERSION \
   && rm -rf /tmp/* /var/tmp/* \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
