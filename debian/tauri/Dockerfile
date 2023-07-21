@@ -20,7 +20,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && rm -fr /tmp/*.deb \
   && rm -rf /usr/share/man/?? \
-  && rm -rf /usr/share/man/??_* \
+  && rm -rf /usr/share/man/??_*
 
 # see https://rust-lang.github.io/rustup/installation/other.html
 RUN curl https://sh.rustup.rs/ -sSf | sh -s --default-toolchain=$RUST_VERSION
