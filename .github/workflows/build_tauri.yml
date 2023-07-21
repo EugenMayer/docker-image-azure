@@ -38,7 +38,7 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ env.IMAGE_FQDN }}:tauri-${{ matrix.node }}-${{ matrix.rust }}-${{ matrix.debian }}
+            ${{ env.IMAGE_FQDN }}:tauri-n${{ matrix.node }}-r${{ matrix.rust }}-${{ matrix.debian }}
           build-args: |
             FROM_IMAGE=node:${{ matrix.node }}-${{ matrix.debian }}
             RUST_VERSION=${{ matrix.rust }}
