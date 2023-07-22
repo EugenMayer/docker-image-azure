@@ -2,7 +2,7 @@
 
 ## WAT
 
-Nightly builds of docker images for azure pipeliens adding the most common tools and most importantly the mandatory `sudo` package.
+Nightly (every 2nd day) builds of docker images for azure pipelines adding the most common tools and most importantly the mandatory `sudo` package.
 All the base images are, if possible, official images e.g. `node:12` and so on
 
 - The images are minimal, untempered and designed to be used in your CI, we use azure-pipelines in this regard.
@@ -19,4 +19,4 @@ There are
  - golang `1.19`-`1.20` builds
  - tauri with node [`18`] and rust [`1.71.0`] builds
 
-Usually builds are available for `buster`,  `bullseye` and `bookworm`, but see the tag list for all the details. 
+Usually builds are available for `buster`,  `bullseye` and `bookworm`, but check the [tag list](https://github.com/EugenMayer/docker-image-azure/pkgs/container/azure/versions) yourself for all the details. 

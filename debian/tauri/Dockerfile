@@ -25,10 +25,12 @@ RUN apt-get update \
 # see https://rust-lang.github.io/rustup/installation/other.html
 RUN curl https://sh.rustup.rs/ -sSf | RUSTUP_HOME=/opt/rustup CARGO_HOME=/opt/rust sh -s -- -y --no-modify-path --default-toolchain=$RUST_TOOLCHAIN_VERSION \
     && echo 'export RUSTUP_HOME=/opt/rustup' | sudo tee -a /etc/profile.d/rust.sh \
+    && echo 'export CARGO_HOME=/opt/cargo' | sudo tee -a /etc/profile.d/rust.sh \
     && echo 'export PATH=/opt/rust/bin:$PATH' | sudo tee -a /etc/profile.d/rust.sh
 
 ENV PATH=/opt/rust/bin:$PATH
 ENV RUSTUP_HOME=/opt/rustup
+ENV CARGO_HOME=/opt/cargo
 
 RUN cargo install tauri-cli
 
