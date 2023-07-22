@@ -33,7 +33,9 @@ ENV PATH=/opt/rust/bin:/opt/cargo/.bin:$PATH
 ENV RUSTUP_HOME=/opt/rustup
 ENV CARGO_HOME=/opt/rust
 
-RUN cargo install tauri-cli
+RUN cargo install tauri-cli \
+    # helps us editing the cargo toml like setting the version during the release
+    && cargo install cargo-edit
 # ensure every user can read/write the registry so one can use gosu to build tauri apps
 RUN find /opt/rust/registry -type d -exec chmod 777 {} \; \
     && find /opt/rust/registry -type f -exec chmod o+rw {} \;
