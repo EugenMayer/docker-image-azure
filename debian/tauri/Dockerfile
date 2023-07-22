@@ -26,9 +26,9 @@ RUN apt-get update \
 RUN curl https://sh.rustup.rs/ -sSf | RUSTUP_HOME=/opt/rustup CARGO_HOME=/opt/rust sh -s -- -y --no-modify-path --default-toolchain=$RUST_TOOLCHAIN_VERSION \
     && echo 'export RUSTUP_HOME=/opt/rustup' | sudo tee -a /etc/profile.d/rust.sh \
     && echo 'export CARGO_HOME=/opt/cargo' | sudo tee -a /etc/profile.d/rust.sh \
-    && echo 'export PATH=/opt/rust/bin:$PATH' | sudo tee -a /etc/profile.d/rust.sh
+    && echo 'export PATH=/opt/rust/bin:/opt/cargo/.bin:$PATH' | sudo tee -a /etc/profile.d/rust.sh
 
-ENV PATH=/opt/rust/bin:$PATH
+ENV PATH=/opt/rust/bin:/opt/cargo/.bin:$PATH
 ENV RUSTUP_HOME=/opt/rustup
 ENV CARGO_HOME=/opt/cargo
 
