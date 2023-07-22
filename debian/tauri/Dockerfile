@@ -33,6 +33,9 @@ ENV RUSTUP_HOME=/opt/rustup
 ENV CARGO_HOME=/opt/rust
 
 RUN cargo install tauri-cli
+# ensure every user can read/write the registry so one can use gosu to build tauri apps
+RUN find /opt/rust/registry -type d -exec chmod 777 {} \; \
+    && find /opt/rust/registry -type f -exec chmod o+rw {} \;
 
 RUN rustc --version \
     && rustup --version \
