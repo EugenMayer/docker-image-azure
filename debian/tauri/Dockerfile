@@ -27,5 +27,7 @@ RUN curl https://sh.rustup.rs/ -sSf | RUSTUP_HOME=/opt/rustup CARGO_HOME=/opt/ru
     && echo 'export RUSTUP_HOME=/opt/rustup' | sudo tee -a /etc/profile.d/rust.sh \
     && echo 'export PATH=/opt/rust/bin:$PATH' | sudo tee -a /etc/profile.d/rust.sh
 
+RUN cargo install tauri-cli
+
 ENV PATH=/opt/rust/bin:$PATH
 ENV RUSTUP_HOME=/opt/rustup
