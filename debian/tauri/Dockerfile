@@ -3,7 +3,7 @@ FROM $FROM_IMAGE
 
 LABEL org.opencontainers.image.source = "https://github.com/EugenMayer/docker-image-azure"
 
-ARG RUST_VERSION=17.0.7
+ARG RUST_TOOLCHAIN_VERSION=stable
 RUN apt-get update \
   && apt-get install -y gnupg apt-transport-https lsb-release \
   # common tools
@@ -23,8 +23,9 @@ RUN apt-get update \
   && rm -rf /usr/share/man/??_*
 
 # see https://rust-lang.github.io/rustup/installation/other.html
-RUN curl https://sh.rustup.rs/ -sSf | sh -s --default-toolchain=$RUST_VERSION
+RUN curl https://sh.rustup.rs/ -sSf | RUSTUP_HOME=/opt/rustup CARGO_HOME=/opt/rust sh -s -- -y --no-modify-path --default-toolchain=$RUST_TOOLCHAIN_VERSION \
+    && echo 'export RUSTUP_HOME=/opt/rustup' | sudo tee -a /etc/profile.d/rust.sh \
+    && echo 'export PATH=/opt/rust/bin:$PATH' | sudo tee -a /etc/profile.d/rust.sh
 
-ENV PATH=/root/.cargo/.bin:$PATH
-
-RUN rustc --version
+ENV PATH=/opt/rust/bin:$PATH
+ENV RUSTUP_HOME=/opt/rustup

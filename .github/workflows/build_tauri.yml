@@ -15,7 +15,7 @@ jobs:
       matrix:
         debian: ['bullseye', 'bookworm']
         # see https://github.com/rust-lang/rust/blob/master/RELEASES.md
-        rust: ["1.71.0"]
+        rust_toolchain_version: ["stable"]
         node: ["18"]
     steps:
       - name: Checkout
@@ -41,4 +41,4 @@ jobs:
             ${{ env.IMAGE_FQDN }}:tauri-n${{ matrix.node }}-r${{ matrix.rust }}-${{ matrix.debian }}
           build-args: |
             FROM_IMAGE=node:${{ matrix.node }}-${{ matrix.debian }}
-            RUST_VERSION=${{ matrix.rust }}
+            RUST_TOOLCHAIN_VERSION=${{ matrix.rust_toolchain_version }}
