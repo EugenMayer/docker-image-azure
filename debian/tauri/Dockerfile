@@ -4,6 +4,7 @@ FROM $FROM_IMAGE
 LABEL org.opencontainers.image.source = "https://github.com/EugenMayer/docker-image-azure"
 
 ARG RUST_TOOLCHAIN_VERSION=stable
+
 RUN apt-get update \
   && apt-get install -y gnupg apt-transport-https lsb-release \
   # common tools
