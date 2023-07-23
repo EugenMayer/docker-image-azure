@@ -13,9 +13,10 @@ RUN apt-get update \
   sudo \
   # support for generic makefile
   make m4 \
-  # rust compile dependencies
-  build-essential cmake clang libsoup2.4-dev libjavascriptcoregtk-4.0-dev librust-pango-dev \
-  librust-gdk-sys-dev libwebkit2gtk-4.0-dev libappindicator3-dev libatk1.0-dev \
+  # tauri compile dependencies - also see https://tauri.app/v1/guides/getting-started/prerequisites/#setting-up-linux
+  build-essential cmake clang libssl-dev libgtk-3-dev file librsvg2-dev libwebkit2gtk-4.0-dev \
+    libsoup2.4-dev libjavascriptcoregtk-4.0-dev librust-pango-dev \
+    librust-gdk-sys-dev  libappindicator3-dev libatk1.0-dev \
   && rm -rf /tmp/* /var/tmp/* \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
