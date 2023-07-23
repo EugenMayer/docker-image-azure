@@ -38,8 +38,8 @@ RUN cargo install tauri-cli \
     # helps us editing the cargo toml like setting the version during the release
     && cargo install cargo-edit
 # ensure every user can read/write the registry so one can use gosu to build tauri apps
-RUN find /opt/rust/registry -type d -exec chmod 777 {} \; \
-    && find /opt/rust/registry -type f -exec chmod o+rw {} \;
+RUN find /opt/rust -type d -exec chmod 777 {} \; \
+    && find /opt/rust -type f -exec chmod o+rw {} \;
 
 RUN rustc --version \
     && rustup --version \
