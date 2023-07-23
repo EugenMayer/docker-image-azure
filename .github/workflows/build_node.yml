@@ -13,22 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: ['8', '10', '12', '14', '16', '18']
-        debian: ['buster', "bullseye", "bookworm"]
+        node: ['10', '16', '18', '20']
+        debian: ["bullseye", "bookworm"]
         exclude:
-          - node: 8
-            debian: bullseye
-          - node: 8
-            debian: bookworm
-          - node: 10
-            debian: bullseye
           - node: 10
             debian: bookworm
-          - node: 12
-            debian: bullseye
-          - node: 12
-            debian: bookworm
-          - node: 14
+          - node: 16
             debian: bookworm
     steps:
       - name: Checkout
