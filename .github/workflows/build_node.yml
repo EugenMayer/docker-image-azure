@@ -18,9 +18,18 @@ jobs:
         exclude:
           - node: 8
             debian: bullseye
+          - node: 8
+            debian: bookworm
           - node: 10
             debian: bullseye
-
+          - node: 10
+            debian: bookworm
+          - node: 12
+            debian: bullseye
+          - node: 12
+            debian: bookworm
+          - node: 14
+            debian: bookworm
     steps:
       - name: Checkout
         uses: actions/checkout@v3
