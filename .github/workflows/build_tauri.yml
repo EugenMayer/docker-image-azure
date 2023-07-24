@@ -12,6 +12,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 1
       matrix:
         debian: ['bullseye', 'bookworm']
         # see https://github.com/rust-lang/rust/blob/master/RELEASES.md

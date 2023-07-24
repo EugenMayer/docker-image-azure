@@ -13,13 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        max-parallel: 2
         node: ['10', '16', '18', '20']
-        debian: ["bullseye", "bookworm"]
+        debian: ['buster', "bullseye", "bookworm"]
         exclude:
+          - node: 10
+            debian: bullseye
           - node: 10
             debian: bookworm
           - node: 16
-            debian: bookworm
+            debian: buster
+          - node: 18
+            debian: buster
+          - node: 20
+            debian: buster
     steps:
       - name: Checkout
         uses: actions/checkout@v3
