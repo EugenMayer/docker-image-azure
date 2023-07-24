@@ -40,7 +40,7 @@ RUN cargo install tauri-cli \
 # ensure every user can read/write the registry so one can use gosu to build tauri apps
 RUN find /opt/rust -type d -exec chmod 777 {} \; \
     && find /opt/rust -type f -exec chmod o+rw {} \; \
-    && find /opt/rust -exec chown nobody:nobody {} \;
+    && find /opt/rust -exec chown nobody:users {} \;
 
 RUN rustc --version \
     && rustup --version \
