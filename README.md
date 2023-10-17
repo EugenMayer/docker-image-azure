@@ -16,7 +16,7 @@ There are
  - node `8`-`18` builds
  - php `7.3`, `8.1` builds
  - java `8`, `11`,`17` builds
- - golang `1.19`-`1.20` builds
+ - golang `1.19`-`1.21` builds
  - tauri with node [`18`] and rust [`1.71.0`] builds
 
 Usually builds are available for `buster`,  `bullseye` and `bookworm`, but check the [tag list](https://github.com/EugenMayer/docker-image-azure/pkgs/container/azure/versions) yourself for all the details.
