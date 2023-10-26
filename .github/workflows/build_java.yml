@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: ['8', '11', '17']
+        java: ['8', '11', '17', '21']
         variant: ["openjdk"]
     steps:
       - name: Checkout
@@ -40,6 +40,6 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ env.IMAGE_FQDN }}:java-${{ matrix.variant}}-${{ matrix.java }}-bullseye
+            ${{ env.IMAGE_FQDN }}:java-${{matrix.variant}}-${{ matrix.java }}-bullseye
           build-args: |
-            FROM_IMAGE=bellsoft/liberica-${{ matrix.variant}}-debian:${{ matrix.java }}
+            FROM_IMAGE=bellsoft/liberica-${{matrix.variant}}-debian:${{ matrix.java }}
