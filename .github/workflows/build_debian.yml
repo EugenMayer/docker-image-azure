@@ -1,4 +1,4 @@
-name: build_golang
+name: build_debian
 
 on:
   push:
