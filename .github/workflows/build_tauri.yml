@@ -3,7 +3,7 @@ name: build_tauri
 on:
   push:
   schedule:
-    - cron:  '30 2 * * */2'
+    - cron: '30 2 * * */2'
 
 env:
   IMAGE_FQDN: ghcr.io/eugenmayer/azure
@@ -16,8 +16,8 @@ jobs:
       matrix:
         debian: ['bullseye', 'bookworm']
         # see https://github.com/rust-lang/rust/blob/master/RELEASES.md
-        rust_toolchain_version: ["stable"]
-        node: ["18"]
+        rust_toolchain_version: ['stable']
+        node: ['20']
     steps:
       - name: Checkout
         uses: actions/checkout@v3

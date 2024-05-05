@@ -3,7 +3,7 @@ name: build_php
 on:
   push:
   schedule:
-    - cron:  '30 0 * * */2'
+    - cron: '30 0 * * */2'
 
 env:
   IMAGE_FQDN: ghcr.io/eugenmayer/azure
@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: ["7.4","8.1", "8.2"]
-        debian: ["bullseye", "bookworm"]
+        php: ['7.4', '8.1', '8.2', '8.3']
+        debian: ['bullseye', 'bookworm']
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -43,4 +43,4 @@ jobs:
             ${{ env.IMAGE_FQDN }}:php-${{ matrix.php }}-${{ matrix.debian }}
           build-args: |
             PHP_VERSION=${{ matrix.php }}
-            FROM_IMAGE=debian:${{ matrix.debian }} 
+            FROM_IMAGE=debian:${{ matrix.debian }}
