@@ -15,7 +15,7 @@ Find them all under [github images](https://github.com/EugenMayer/docker-image-a
 There are 
  - node `10`,`16`,`18`,`20`  builds
  - php `7.3`, `8.1`, `8.2`, `8.3` builds
- - java `8`, `11`,`17`, `21`  builds
+ - java `8`, `11`,`17`, `21`, `23`  builds
  - golang `1.19`-`1.23` builds
  - tauri with node [`20`] and rust [`1.78.0`] builds
  - debian `bullseye`, `bookworm` builds
