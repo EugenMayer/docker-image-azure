@@ -40,6 +40,6 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ env.IMAGE_FQDN }}:ruby-${{ matrix.ruby }}-bullseye
+            ${{ env.IMAGE_FQDN }}:ruby-${{ matrix.ruby }}-bookworm
           build-args: |
             FROM_IMAGE=ruby:${{ matrix.ruby }}
