@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        debian: ['bullseye', 'bookworm']
+        debian: ['bookworm']
         # see https://github.com/rust-lang/rust/blob/master/RELEASES.md
         rust_toolchain_version: ['stable']
         node: ['24']
