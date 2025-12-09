@@ -14,23 +14,8 @@ jobs:
     strategy:
       max-parallel: 2
       matrix:
-        node: ['10', '16', '18', '20', '22', '24']
-        debian: ['buster', 'bullseye', 'bookworm']
-        exclude:
-          - node: 10
-            debian: bullseye
-          - node: 10
-            debian: bookworm
-          - node: 16
-            debian: buster
-          - node: 18
-            debian: buster
-          - node: 20
-            debian: buster
-          - node: 22
-            debian: buster
-          - node: 24
-            debian: buster
+        node: ['16', '18', '20', '22', '24']
+        debian: ['bullseye', 'bookworm']
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -52,7 +37,7 @@ jobs:
       - name: Build
         uses: docker/build-push-action@v3
         with:
-          context: debian/
+          context: debian/node
           platforms: linux/amd64
           push: true
           tags: |
