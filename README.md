@@ -13,7 +13,7 @@ All the base images are, if possible, official images e.g. `node:12` and so on
 Find them all under [github images](https://github.com/EugenMayer/docker-image-azure/pkgs/container/azure/versions)
 
 There are 
- - node `10`,`16`,`18`,`20`,`22`,`24`  builds
+ - node `16`,`18`,`20`,`22`,`24`  builds
  - php `7.3`, `8.1`, `8.2`, `8.3`, `8.4` builds
  - java `8`, `11`,`17`, `21`, `23`  builds
  - golang `1.21`-`1.24` builds
