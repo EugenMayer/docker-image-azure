@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        debian: ['bullseye', 'bookworm']
+        debian: ['bullseye', 'bookworm', "trixie"]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
