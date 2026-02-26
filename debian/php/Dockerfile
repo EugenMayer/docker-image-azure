@@ -22,8 +22,7 @@ RUN apt-get update \
   && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" >> /etc/apt/sources.list.d/packages.sury.org.list \
   && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main/debug" >> /etc/apt/sources.list.d/packages.sury.org-debug.list \
   && echo "new GPG key due to https://www.patreon.com/posts/dpa-new-signing-25451165" \
-  && curl https://packages.sury.org/php/apt.gpg -o /tmp/sury.gpg \
-  && apt-key add /tmp/sury.gpg && rm /tmp/sury.gpg \
+  && curl https://packages.sury.org/php/apt.gpg -o /etc/apt/trusted.gpg.d/sury.gpg \
   && apt update \
   && apt-get install -y php${PHP_VERSION}-cli php${PHP_VERSION}-zip \
   # install composer
