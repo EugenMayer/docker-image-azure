@@ -15,7 +15,14 @@ jobs:
       max-parallel: 2
       matrix:
         node: ['16', '18', '20', '22', '24']
-        debian: ['bullseye', 'bookworm', "trixie"]
+        debian: ['bullseye', 'bookworm', 'trixie']
+        exclude:
+          - node: 16
+            debian: trixie
+          - node: 18
+            debian: trixie
+          - node: 24
+            debian: bullseye
     steps:
       - name: Checkout
         uses: actions/checkout@v3
