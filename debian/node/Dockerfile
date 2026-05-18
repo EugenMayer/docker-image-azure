@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.source = "https://github.com/EugenMayer/docker-im
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@latest-{PNPM_VERSION} --activate
 
 # Install sudo, jq, make, m4, wget
 RUN apt-get update && apt-get upgrade -y \
