@@ -2,6 +2,8 @@ ARG FROM_IMAGE
 FROM $FROM_IMAGE
 LABEL org.opencontainers.image.source = "https://github.com/EugenMayer/docker-image-azure"
 
+ARG PNPM_VERSION
+
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable && corepack prepare pnpm@latest-{PNPM_VERSION} --activate
