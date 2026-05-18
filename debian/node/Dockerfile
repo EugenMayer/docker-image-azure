@@ -6,7 +6,7 @@ ARG PNPM_VERSION
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable && corepack prepare pnpm@latest-{PNPM_VERSION} --activate
+RUN corepack enable && corepack prepare pnpm@latest-${PNPM_VERSION} --activate
 
 # Install sudo, jq, make, m4, wget
 RUN apt-get update && apt-get upgrade -y \
