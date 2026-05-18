@@ -14,15 +14,19 @@ jobs:
     strategy:
       max-parallel: 2
       matrix:
-        node: ['16', '18', '20', '22', '24']
-        debian: ['bullseye', 'bookworm', 'trixie']
+        node: ['16', '20', '24']
+        debian: ['bookworm', 'trixie']
         exclude:
           - node: 16
             debian: trixie
-          - node: 18
-            debian: trixie
-          - node: 24
-            debian: bullseye
+        include:
+          - node: '16'
+            pnpm: '8'
+          - node: '20'
+            pnpm: '10'
+          - node: '24'
+            pnpm: '11'
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -51,3 +55,4 @@ jobs:
             ${{ env.IMAGE_FQDN }}:node-${{ matrix.node }}-${{ matrix.debian }}
           build-args: |
             FROM_IMAGE=node:${{ matrix.node }}-${{ matrix.debian }}
+            PNPM_VERSION=${{ matrix.pnpm }}
