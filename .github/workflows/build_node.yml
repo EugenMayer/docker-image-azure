@@ -22,8 +22,6 @@ jobs:
         include:
           - node: '16'
             pnpm: '8'
-          - node: '20'
-            pnpm: '10'
           - node: '24'
             pnpm: '11'
 
