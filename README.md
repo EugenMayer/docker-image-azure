@@ -14,8 +14,8 @@ Find them all under [github images](https://github.com/EugenMayer/docker-image-a
 
 There are 
  - node `16`,`24`  builds
- - php `7.3`, `8.1`, `8.2`, `8.3`, `8.4` builds
- - java `8`, `11`,`17`, `21`, `23`  builds
+ - php `7.3`, `8.2`, `8.3`, `8.4` builds
+ - java `8`, `11`,`17`, `21`, `23`, `25` builds
  - golang `1.21`-`1.24` builds
  - tauri with node [`24`] and rust [`1.78.0`] builds
  - debian `bookworm`,`trixie` builds
